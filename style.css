@@ -1,0 +1,112 @@
+:root {
+    --paleta1-cor1: #252136;
+    --paleta1-cor2: #9166F0;
+    --paleta1-cor3: #FFF8FD;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--paleta1-cor3);
+    /* background: url(./lib/img/backgroundPattern.png); */
+}
+
+header {
+    height: 5rem;
+    background-color: var(--paleta1-cor1);
+}
+
+#princSection {
+    height: 28rem;
+    padding-block: 2rem;
+    position: relative;
+}
+
+#princSection .backgroundSection {
+    background-color: var(--paleta1-cor1);
+    border-radius: 0 0 10% 10%;
+    height: 84%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.containerCarrosel {
+    position: relative;
+    height: 100%;
+    overflow-x: overlay;
+}
+
+.containerCarrosel::-webkit-scrollbar {
+    display: none;
+}
+
+#princSection .carroselPics {
+    height: 67%;
+    display: flex;
+    gap: 8rem;
+    /* margin-top: 1.5rem; */
+}
+
+#princSection .carroselPics .imgContainer {
+    overflow: hidden;
+    height: 100%;
+    min-width: calc((100vw / 4) * 1.3);
+    filter: brightness(0.3) blur(1px);
+    transform: scale(1);
+    transition: .2s all;
+    border-radius: 0.5rem;
+}
+
+#princSection .carroselPics .imgContainer.viewImg {
+    filter: brightness(1) blur(0px);
+    transform: scale(1.5) translateY(0);
+    transform-origin: top;
+    border: 6px solid white;
+}
+
+#princSection .carroselPics .imgContainer:not(.viewImg) {
+    transform: scale(1) translateY(1.5rem);
+}
+
+#princSection .carroselPics .imgContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+
+}
+
+#princSection .carroselPics .imgContainer > div {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.previousImgCarr,
+.nextImgCarr {
+    position: absolute;
+}
+
+.previousImgCarr {
+    left: 10px;
+}
+
+.nextImgCarr {
+    right: 10px;
+}
+
+.previousImgCarr,
+.nextImgCarr {
+    background-color: transparent;
+    border: none;
+    outline: none !important;
+    font-size: 2.5rem;
+    color: #fdfdfd;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    cursor: pointer;
+}
